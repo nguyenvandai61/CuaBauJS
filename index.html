@@ -18,7 +18,7 @@
         <div class="dice"></div>
         <div class="dice"></div>
         <div class="dice"></div>
-        <button class="roll-button" onclick="roll()">Quay</button>
+        <button class="roll-btn" onclick="roll()">Quay</button>
       </div>
     </div>
     <footer>
@@ -34,7 +34,7 @@
       var dice3 = new Dice();
       var diceDom = document.getElementsByClassName("dice");
       var oldDom;
-      var coin = 1000;
+      var coin = 10000;
       var betStore = [0, 0, 0, 0, 0, 0];
       var result = [];
       var boardDom = document.getElementById("board-game");
@@ -110,6 +110,8 @@
         if (isGameOver) {
           document.getElementsByClassName("game-over")[0].style.display =
             "inline-block";
+          document.getElementsByClassName("roll-btn")[0].style.pointerEvents =
+            "none";
         }
       }
 
@@ -152,13 +154,14 @@
         gameOverDom.innerHTML = "Game Over";
         let restartBtn = document.createElement("button");
         restartBtn.setAttribute("onclick", `resetGame()`);
-        restartBtn.innerHTML = "RESTART";
+        restartBtn.innerHTML = "Restart";
         gameOverDom.append(restartBtn);
         console.log(document.getElementById("container"));
         document.getElementById("container").append(gameOverDom);
       }
       function resetGame() {
         document.getElementsByClassName("game-over")[0].style.display = "none";
+        document.getElementsByClassName('roll-btn')[0].style.pointerEvents = 'auto';
         isGameOver = false;
         coin = 10000;
         document.getElementsByClassName("coin")[0].innerHTML = coin;
