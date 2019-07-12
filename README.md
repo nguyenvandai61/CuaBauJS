@@ -7,7 +7,8 @@
 > Gameover khi bạn hết tiền
 
 ----------
-##Mobile View
+## Mobile View
+
 ![alt](/images/design/mobile-view.jpg)
-##Desktop View
+## Desktop View
 ![alt](/images/design/desktop-view.jpg)
